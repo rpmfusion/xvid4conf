@@ -3,7 +3,7 @@
 Summary: Tool to create XviD configuration files
 Name: xvid4conf
 Version: 1.12
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: GPL
 Group: Applications/Multimedia
 URL: http://www.exit1.org/archive/dvdrip-users/2005-07/msg00007.html
@@ -66,6 +66,9 @@ desktop-file-install \
 
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.12-4
+- rebuild for new F11 features
+
 * Sat Oct 18 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 1.12-3
 - rebuild for RPM Fusion
 

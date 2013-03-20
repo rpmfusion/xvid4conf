@@ -1,10 +1,8 @@
-%define desktop_vendor rpmforge
-
 Summary: Tool to create XviD configuration files
 Name: xvid4conf
 Version: 1.12
-Release: 6%{?dist}
-License: GPL
+Release: 7%{?dist}
+License: GPLv2+
 Group: Applications/Multimedia
 URL: http://www.exit1.org/archive/dvdrip-users/2005-07/msg00007.html
 Source0: http://nexus.tfh-berlin.de/~t2/source/2.1/x/xvid4conf-%{version}.tar.bz2
@@ -26,7 +24,7 @@ the configuration file) is intended to be used with at least XviD 1.0.
 Name=XviD Configurator
 Comment=Create XviD configuration files to use with transcode and dvd::rip
 Exec=xvid4conf
-Icon=xvid4conf.png
+Icon=xvid4conf
 Terminal=false
 Type=Application
 Categories=Application;AudioVideo;
@@ -44,7 +42,6 @@ EOF
 
 # Install the desktop file
 desktop-file-install \
-    --vendor %{desktop_vendor} \
     --dir %{buildroot}%{_datadir}/applications \
     xvid4conf.desktop
 
@@ -61,12 +58,12 @@ desktop-file-install \
 %defattr(-, root, root, 0755)
 %doc AUTHORS ChangeLog COPYING README
 %{_bindir}/xvid4conf
-%{_datadir}/applications/%{desktop_vendor}-xvid4conf.desktop
+%{_datadir}/applications/*xvid4conf.desktop
 %{_datadir}/pixmaps/xvid4conf.png
 
 
 %changelog
-* Sun Mar 03 2013 Nicolas Chauvet <kwizart@gmail.com> - 1.12-6
+* Wed Mar 20 2013 Nicolas Chauvet <kwizart@gmail.com> - 1.12-7
 - Mass rebuilt for Fedora 19 Features
 
 * Wed Jan 25 2012 Nicolas Chauvet <kwizart@gmail.com> - 1.12-5

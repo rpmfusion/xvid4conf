@@ -1,7 +1,7 @@
 Summary: Tool to create XviD configuration files
 Name: xvid4conf
 Version: 1.12
-Release: 7%{?dist}
+Release: 8%{?dist}
 License: GPLv2+
 Group: Applications/Multimedia
 URL: http://www.exit1.org/archive/dvdrip-users/2005-07/msg00007.html
@@ -63,6 +63,9 @@ desktop-file-install \
 
 
 %changelog
+* Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 1.12-8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Wed Mar 20 2013 Nicolas Chauvet <kwizart@gmail.com> - 1.12-7
 - Mass rebuilt for Fedora 19 Features
 

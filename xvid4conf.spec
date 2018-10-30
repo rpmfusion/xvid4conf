@@ -1,14 +1,15 @@
 Summary: Tool to create XviD configuration files
-Name: xvid4conf
+Name:    xvid4conf
 Version: 1.12
-Release: 13%{?dist}
+Release: 14%{?dist}
 License: GPLv2+
-Group: Applications/Multimedia
-URL: http://www.exit1.org/archive/dvdrip-users/2005-07/msg00007.html
+URL:     http://www.exit1.org/archive/dvdrip-users/2005-07/msg00007.html
 Source0: http://nexus.tfh-berlin.de/~t2/source/2.1/x/xvid4conf-%{version}.tar.bz2
 Source1: xvid4conf.png
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires: gtk2-devel, desktop-file-utils
+
+BuildRequires: gcc
+BuildRequires: gtk2-devel
+BuildRequires: desktop-file-utils
 
 %description
 This tool creates XviD configuration files. The generated configuration file
@@ -17,7 +18,17 @@ the configuration file) is intended to be used with at least XviD 1.0.
 
 
 %prep
-%setup
+%setup -q
+
+
+%build
+%configure
+%make_build
+
+
+%install
+%make_install
+
 # Create the desktop file
 %{__cat} > xvid4conf.desktop << EOF
 [Desktop Entry]
@@ -30,16 +41,6 @@ Type=Application
 Categories=Application;AudioVideo;
 EOF
 
-
-%build
-%configure
-%{__make} %{?_smp_mflags}
-
-
-%install
-%{__rm} -rf %{buildroot}
-%makeinstall
-
 # Install the desktop file
 desktop-file-install \
     --dir %{buildroot}%{_datadir}/applications \
@@ -50,19 +51,21 @@ desktop-file-install \
     %{buildroot}%{_datadir}/pixmaps/xvid4conf.png
 
 
-%clean
-%{__rm} -rf %{buildroot}
-
-
 %files
-%defattr(-, root, root, 0755)
-%doc AUTHORS ChangeLog COPYING README
+%doc AUTHORS ChangeLog README
+%license COPYING
 %{_bindir}/xvid4conf
 %{_datadir}/applications/*xvid4conf.desktop
 %{_datadir}/pixmaps/xvid4conf.png
 
 
 %changelog
+* Tue Oct 30 2018 Leigh Scott <leigh123linux@googlemail.com> - 1.12-14
+- Remove Group tag
+- Use make macros
+- Add BuildRequires gcc
+- Clean up spec file
+
 * Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 1.12-13
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 

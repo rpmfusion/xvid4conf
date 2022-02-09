@@ -1,7 +1,7 @@
 Summary: Tool to create XviD configuration files
 Name:    xvid4conf
 Version: 1.12
-Release: 20%{?dist}
+Release: 21%{?dist}
 License: GPLv2+
 URL:     http://www.exit1.org/archive/dvdrip-users/2005-07/msg00007.html
 Source0: http://nexus.tfh-berlin.de/~t2/source/2.1/x/xvid4conf-%{version}.tar.bz2
@@ -60,6 +60,9 @@ desktop-file-install \
 
 
 %changelog
+* Wed Feb 09 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.12-21
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Tue Aug 03 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1.12-20
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
